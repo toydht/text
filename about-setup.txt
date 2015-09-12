@@ -1,0 +1,3 @@
+This site is hosted using GitHub pages. Each of the main directories (img, txt...) are their own repository, and all of the files in each directory are kept in those repositories. The CSS styles are contained in the repository called "css". It's registered as a GitHub Pages site with an index.html file, but the index file is really just there to keep the system happy.
+The CSS styles can be accessed like on any other site. It's pretty nifty.
+
