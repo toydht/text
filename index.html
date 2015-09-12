@@ -34,10 +34,16 @@
       var ref = getUrlVars()["ref"];
       var texts = document.getElementById("texts").children;
       for (text in texts) {
-        var link = texts[text].children[0];
-        if (link.getAttribute("href") == ref) {
-          link.setAttribute("class", "referenced");
-          break;
+        if (texts[text] != null) {
+          if (texts[text].children != null) {
+            var link = texts[text].children[0];
+            if (link != null) {
+              if (link.getAttribute("href") == ref) {
+                link.setAttribute("class", "referenced");
+                break;
+              }
+            }
+          }
         }
       }
     </script>
