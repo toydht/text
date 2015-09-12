@@ -32,10 +32,11 @@
     </ul>
     <script>
       var ref = getUrlVars()["ref"];
-      var texts = document.getElementById("texts");
+      var texts = document.getElementById("texts").children;
       for (text in texts) {
-        if (texts[text].getAttribute("href") == ref) {
-          texts[text].setAttribute("class", "referenced");
+        var link = texts[text].children[0];
+        if (link.getAttribute("href") == ref) {
+          link.setAttribute("class", "referenced");
           break;
         }
       }
