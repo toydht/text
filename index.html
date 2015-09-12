@@ -3,6 +3,16 @@
     <title>text | toydht</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/styles.css">
+    <script>
+    function getUrlVars() {
+      var vars = {};
+      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,    
+      function(m,key,value) {
+        vars[key] = value;
+      });
+      return vars;
+    }
+    </script>
   </head>
   <body>
     <nav>
@@ -16,9 +26,19 @@
       <h1>text</h1>
       <p>textual things.</p>
     </header>
-    <ul>
+    <ul id="texts">
       <li><a href="laryngitis.txt">laryngitis.txt</a></li>
       <li><a href="about-setup.txt">about-setup.txt</a></li>
     </ul>
+    <script>
+      var ref = getUrlVars()["ref"];
+      var texts = document.getElementById("texts");
+      for (text in texts) {
+        if (texts[text].getAttribute("href") == ref) {
+          texts[text].setAttribute("class", "referenced");
+          break;
+        }
+      }
+    </script>
   </body>
 </html>
