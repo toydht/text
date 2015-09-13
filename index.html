@@ -20,27 +20,28 @@
         <li><a href="/">index</a></li>
         <li>text</li>
         <li><a href="/img">img</a></li>
+        <li><a href="/mp3">mp3</a></li>
       </ul>
     </nav>
     <header>
       <h1>text</h1>
       <p>textual things.</p>
     </header>
-    <ul id="texts">
+    <ul id="links">
       <li><a href="bunions.txt">bunions.txt</a></li>
       <li><a href="laryngitis.txt">laryngitis.txt</a></li>
       <li><a href="about-setup.txt">about-setup.txt</a></li>
     </ul>
     <script>
       var ref = getUrlVars()["ref"];
-      var texts = document.getElementById("texts").children;
-      for (text in texts) {
-        if (texts[text] != null) {
-          if (texts[text].children != null) {
-            var link = texts[text].children[0];
-            if (link != null) {
-              if (link.getAttribute("href") == ref) {
-                link.setAttribute("class", "referenced");
+      var links = document.getElementById("links").children;
+      for (link in links) {
+        if (links[link] != null) {
+          if (links[link].children != null) {
+            var thisLink = links[link].children[0];
+            if (thisLink != null) {
+              if (thisLink.getAttribute("href") == ref) {
+                thisLink.setAttribute("class", "referenced");
                 break;
               }
             }
